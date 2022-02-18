@@ -34,37 +34,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("First App"),
-        backgroundColor: const Color.fromARGB(255, 34, 0, 0),
-        foregroundColor: Colors.cyan,
-        centerTitle: true,
+        title: const Text("TITLE"),
       ),
-      backgroundColor: Colors.black,
-      body: Column(
-        mainAxisSize: MainAxisSize.max,
-          children: [
-            Row(
-              // crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Text("HELLO WORLD", style: TextStyle(color: Colors.cyan)),
-                SizedBox(height: 50) 
-              ],
-            ),
-            Row( // or can be list view, but without axis alignments and sizing
-            mainAxisSize: MainAxisSize.max,
-            // verticaly
-            crossAxisAlignment: CrossAxisAlignment.end,
-            // horizonaly
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(height: 50, width: 50, color: Colors.blue),
-              Container(height: 100, width: 50, color: Colors.red),
-              Container(height: 150, width: 50, color: Colors.purple),
-            ],
-          ),
-        ],
-      )
     );
   }
 }
