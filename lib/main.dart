@@ -30,39 +30,41 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: const Text("First App"),
+        backgroundColor: const Color.fromARGB(255, 34, 0, 0),
+        foregroundColor: Colors.cyan,
+        centerTitle: true,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+      backgroundColor: Colors.black,
+      body: Column(
+        mainAxisSize: MainAxisSize.max,
+          children: [
+            Row(
+              // crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Text("HELLO WORLD", style: TextStyle(color: Colors.cyan)),
+                SizedBox(height: 50) 
+              ],
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+            Row( // or can be list view, but without axis alignments and sizing
+            mainAxisSize: MainAxisSize.max,
+            // verticaly
+            crossAxisAlignment: CrossAxisAlignment.end,
+            // horizonaly
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Container(height: 50, width: 50, color: Colors.blue),
+              Container(height: 100, width: 50, color: Colors.red),
+              Container(height: 150, width: 50, color: Colors.purple),
+            ],
+          ),
+        ],
+      )
     );
   }
 }
